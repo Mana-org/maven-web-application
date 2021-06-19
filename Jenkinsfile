@@ -1,7 +1,7 @@
 node{
     def MavenHome=tool name: "maven3.8.1"
     stage('checkout source code from git'){
-        git branch: 'development', credentialsId: 'a17f2ca5-fcfd-41be-b9c4-d6242242527f', url: 'https://github.com/Mana-org/maven-web-application.git'
+       git branch: 'UAT', credentialsId: 'a17f2ca5-fcfd-41be-b9c4-d6242242527f', url: 'https://github.com/Mana-org/maven-web-application.git'
     }
     stage('artifact creation using maven tool'){
        sh "${MavenHome}/bin/mvn clean package"
